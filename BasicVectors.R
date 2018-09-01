@@ -89,4 +89,24 @@ p2 <- as.factor(w)
 p2
 as.numeric(p2)
 factor(p2,levels = c("football", "basketball", "hockey", "baseball"), ordered = TRUE)
+p2
 
+#Functions
+u
+mean(u)
+#Function documentation - Easiest way to access the documentation is to place
+#a question mark in front of the function name, like this ?mean
+#To get help on binary operators like +, -, * or == surround them with back tick (')
+#There are occasions when we only have sense of the function we want to use
+#In this case we can look up the function by usung part of the name with apropose
+
+apropos("kmeans")
+apropos("mea")
+
+#Missing Data
+d <- c(1, NA, 3)
+is.na(d)
+dChar <- c("Hockey", NA, "Lacrosse")
+is.na(dChar)
+e <- NULL
+is.null(e)

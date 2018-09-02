@@ -39,3 +39,19 @@ class(df["Sport"])
 #To ensure that data frame is returned instead of factor vector when using single brackets
 # there is thrid arugument:drop=FALSE
 df[, "Sport", drop=FALSE]
+#List
+#list can store any number of items of any type
+list(1,2,3)
+list(c(1,2,3))
+list1 <- list(c(1,2,3), 4:7)
+df
+list(df, 1:10)
+list2 <- list(df, 1:10, list1)
+list2
+list2 [3][1]
+names(list2) <- c("data.frame", "vector", "list")
+list2
+list2 ["data.frame"]
+emptyList <- vector(mode = "list", length = 3)
+emptyList [1] <- 1
+emptyList

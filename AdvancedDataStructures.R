@@ -55,3 +55,50 @@ list2 ["data.frame"]
 emptyList <- vector(mode = "list", length = 3)
 emptyList [1] <- 1
 emptyList
+length(list2)
+list2
+df1 <- data.frame(z)
+df2 <- data.frame(df1, xy = 1:10, yz=c("1,2,3")) 
+df2
+df2[3]
+names(df2) <-c("a", "b", "C")
+df2
+df2$b
+#Matrices
+#This is similar to a data.frame in that is is rectangular with rows and columns excep
+#that every single element, regardless of the column, must be the same type, most commonly all numerics
+m1 <- matrix(1:10, nrow = 5)
+m1
+m2 <- matrix(21:30, ncol = 2)
+m2
+nrow(m1)
+ncol(m2)
+dim(m2)
+dim(m1)
+m1 + m2
+m1*m2
+m3 <- matrix(1, nrow = 5, ncol = 2)
+m3
+m4 <- matrix(2, nrow = 5, ncol = 2)
+m4
+m3*m4
+m1==m2
+t(m1) #transpose
+m1
+m2
+m1 %*% t(m2) #matrix multiplication - no of column on left of matrix to be same as the number of rows of the right of matrix
+
+#Arrays
+#An array is essentially a multidimentional vector.
+#It must all be of the same type and individual elements are accessed in a similar fashion using the square barckets
+#The first element is the row index, the second is the column index and the remaining elements are for outer dimension
+
+a1 <- array(1:10, dim = c(1,2,3)) #dimension 1 row X 2 column X 3
+a1
+a2 <- array(10:20, dim = c (2,2,2))
+a2
+
+#The main difference between an array and a matrix is that matrices are restricted to two dimensions while arrays can have a arbitrary number
+
+#Summary: Vector, factor vector, data frames, list, matrices, arrays
+    

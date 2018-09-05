@@ -1,5 +1,5 @@
 # RExamples
-"RExamples covers some of the basic concepts of R. 
+RExamples covers some of the basic concepts of R. 
 
 All the topics covered here are part of the book "R for Everyone - Advanced Analytics and Graphics" by Jared P. Lander.
 
@@ -9,4 +9,3 @@ Some of the topics that are covered are as below:
 - Advanced Data Structures
 - Reading Data into R
 
-"

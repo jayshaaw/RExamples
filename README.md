@@ -7,6 +7,6 @@ All the topics covered here are part of the book "R for Everyone - Advanced Anal
 Some of the topics that are covered are as below:
 - Basics of R
 - Advanced Data Structures
-
+- Reading Data into R
 
 "

@@ -29,3 +29,4 @@ data(diamonds)
 head(diamonds)
 
 #To find a list of available data, simply type data() into the console
+

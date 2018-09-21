@@ -48,11 +48,12 @@ names(frameList) <- frameNames
 for (a in frameNames) {
     frameList[[a]] <- eval(parse(text = a)) 
 }
-head(frameList[1])
+head(frameList[2])
 head(frameList[["Aid_00s"]])
 #Hvaing all the data in the list, helps in iterating  through the list
 #rather than using a loop, we can use the Reduce function to speed up the operation
 
-allAid <- Reduce(function(){
-    join(by = c("Country.Name", "Program.Name"))
+allAid <- Reduce(function(...){
+    join(...,by = c("Country.Name", "Program.Name"))
 }, frameList)
+dim(allAid)

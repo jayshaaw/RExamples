@@ -57,3 +57,40 @@ allAid <- Reduce(function(...){
     join(...,by = c("Country.Name", "Program.Name"))
 }, frameList)
 dim(allAid)
+
+
+#reshape2
+#Melting data (going from column orientation to row orientation)
+#Casting data (going from row orientation to column orientation)
+
+head(Aid_00s)
+
+#The dollar amount for a country-program aid information for year is stored in separate columns
+#To make it easier for graphing the table will be melted to store the dollar information in just one column
+
+#melt
+require(reshape2)
+melt00 <- melt(Aid_00s, id.vars = c("Country.Name", "Program.Name"), variable.name = "Year", value.name = "Dollars")
+tail(melt00, 10)
+
+#The id.vars argument specifies which columns uniquelt identify a row
+
+require(scales)
+#strip the "FY" out of the year column and convert it in numeric
+melt00$Year <- as.numeric(str_sub(melt00$Year, start = 3, end = 6))
+#aggregate the data so we have yearly numbers by program
+meltAgg <- aggregate(Dollars ~ Program.Name + Year, data = melt00, sum, na.rm=TRUE)
+
+#just keep the first 10 characters of program name then it will fit in the plot
+meltAgg$Program.Name <- str_sub(meltAgg$Program.Name, start = 1, end = 10)
+
+#plot
+library(ggplot2)
+require(ggplot2)
+ggplot(meltAgg, aes(x = Year, y = Dollars)) + geom_line(aes(group=Program.Name)) + facet_wrap( ~ Program.Name) 
+
+#dcast
+#The data we melted can be casted back into the wide format using the function dcast
+
+cast00 <- dcast(melt00, Country.Name + Program.Name ~ Year, value.var = "Dollars" )
+head(cast00)
